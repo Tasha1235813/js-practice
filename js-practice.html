@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fantastical, Infallible Computron!</title>
+    <style>
+        body { background-color: #a5abb1;}
+        li { font-size: 28px; }
+        p { font-size: 16px; }
+        button { height: 28px;
+                 margin-left: 28px; }
+        img { border-radius: 15%;
+              margin-left: 28px; }
+      </style>
+</head>
+<body>
+    <h1>Please input a command for Computron:</h1>
+	<img src="./roboboss.jpeg" alt="Your future overlord, machine learning - one expression at a time!">
+    <h3> Please enter a number. </h3>
+    <label> 7 will be added to it; as it pleases Computron. </label>
+    <div></div>
+    <input type="text" id="variable1">
+    <input type="button" value="Engage." onclick="add7()">
+    <div id="addresult"></div>
+
+    <h3> Please enter two factors to produce a product. </h3>
+    <label> These are the only products Computron desires. Away with your tangible nonsense. </label>
+    <div></div>
+    <input type="text" id="multiply1">
+    <div></div>
+    <input type="text" id="multiply2">
+    <input type="button" value="Calculate Product." onclick="multiply()">
+    <div id="multiplyResult"></div>
+
+    <h3> Please enter a word or phrase. </h3>
+    <label> Computron will capitalize the first letter for you! Isn't Computron helpful? </label>
+    <div></div>
+    <input type="text" id="phrase1">
+    <input type="button" value="Engage!" onclick="capitalize()">
+    <div id="capitalized"></div>
+
+    <h3> Please enter a word or phrase. </h3>
+    <label> Computron will return the terminal character to you for deletion! </label>
+    <div></div>
+    <input type="text" id="phrase2">
+    <input type="button" value="Thank you, Computron." onclick="lastLetter()">
+    <div id="terminal"></div>
+
+    <script>
+       function add7() {
+        var variable1 = parseInt(document.getElementById("variable1").value);
+        var sum = (variable1 + 7)
+        document.getElementById("addresult").innerHTML=sum;
+       }
+       
+       function multiply() {
+        var multiply1 = parseInt(document.getElementById("multiply1").value);
+        var multiply2 = parseInt(document.getElementById("multiply2").value);
+        var multiply = (multiply1 * multiply2)
+        document.getElementById("multiplyResult").innerHTML=multiply;
+       }
+
+       function capitalize() {
+        var phrase1 = (document.getElementById("phrase1").value);
+        phrase1 = phrase1[0].toUpperCase() + phrase1.substring(1)
+        document.getElementById("capitalized").innerHTML=phrase1;
+       }
+
+       function lastLetter() {
+        var phrase2 = (document.getElementById("phrase2").value);
+        var lastLetter = phrase2.substring(phrase2.length -1)
+        document.getElementById("terminal").innerHTML=lastLetter;
+       }
+
+
+
+    </script>
+</body>
+</html>
